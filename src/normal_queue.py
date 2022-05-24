@@ -1,17 +1,10 @@
-class NormalQueue:
-    code: int = 0
-    queue = []
-    customers_served = []
-    current_number: str = ""
+from base_queue import BaseQueue
+
+
+class NormalQueue(BaseQueue):
 
     def generate_current_number(self) -> None:
         self.current_number = f'NM{self.code}'
-
-    def reset_queue(self):
-        if self.code >= 100:
-            self.code = 0
-        else:
-            self.code += 1
 
     def update_queue(self):
         self.reset_queue()

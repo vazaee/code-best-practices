@@ -1,17 +1,10 @@
-class PriorityQueue:
-    code: int = 0
-    queue = []
-    customers_served = []
-    current_number: str = ""
+from base_queue import BaseQueue
+
+
+class PriorityQueue(BaseQueue):
 
     def generate_current_number(self) -> None:
         self.current_number = f'PR{self.code}'
-
-    def reset_queue(self) -> None:
-        if self.code >= 100:
-            self.code = 0
-        else:
-            self.code += 1
 
     def update_queue(self) -> None:
         self.reset_queue()
@@ -19,7 +12,7 @@ class PriorityQueue:
         self.queue.append(self.current_number)
 
     def call_customer(self, till: int) -> str:
-        current_customer = self.queue.pop(0)
+        current_customer: str = self.queue.pop(0)
         self.customers_served.append(current_customer)
         return f'Current customer: {current_customer}, go to the till: {till}'
 
@@ -31,6 +24,8 @@ class PriorityQueue:
             statistics['day'] = day
             statistics['agency'] = agency
             statistics['customers_served'] = self.customers_served
-            statistics['n_customers_served'] = len(self.customers_served)
+            statistics['number_customers_served'] = (
+                len(self.customers_served)
+            )
 
         return statistics
