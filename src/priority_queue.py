@@ -1,4 +1,4 @@
-class PriorityQueue():
+class PriorityQueue:
     code: int = 0
     queue = []
     customers_served = []
@@ -31,6 +31,6 @@ class PriorityQueue():
             statistics['day'] = day
             statistics['agency'] = agency
             statistics['customers_served'] = self.customers_served
-            statistics['number_of_customers_served'] = len(self.customers_served)
+            statistics['n_customers_served'] = len(self.customers_served)
 
         return statistics
