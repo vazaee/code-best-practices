@@ -1,4 +1,4 @@
-from normal_queue import NormalQueue
+# from normal_queue import NormalQueue
 from priority_queue import PriorityQueue
 
 # test_queue = NormalQueue()
